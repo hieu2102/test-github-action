@@ -34,10 +34,10 @@ jobs:
                 REMOTE_USER: ${{ secrets.REMOTE_USER }} 
                 TARGET: ${{ secrets.TARGET }} 
 
-      - name: Start app 
+      - name: Install Dependencies
         uses: garygrossgarten/github-action-ssh@v0.6.3
         with:
-                command: cd ${{ secrets.SERVER_SSH_KEY }};ls -l;npm install; npm start
+                command: sh ${{ secrets.TARGET }}/start.sh
                 host: ${{ secrets.REMOTE_HOST }} 
                 username: ${{ secrets.REMOTE_USER }}
                 privateKey: ${{ secrets.SERVER_SSH_KEY }} 
