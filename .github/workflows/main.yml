@@ -34,4 +34,11 @@ jobs:
                 REMOTE_USER: ${{ secrets.REMOTE_USER }} 
                 TARGET: ${{ secrets.TARGET }} 
 
+      - name: Run SSH command
+        uses: garygrossgarten/github-action-ssh@v0.6.3
+        with:
+                command: nohup node ${{ secrets.TARGET }}/app.js
+                host: ${{ secrets.REMOTE_HOST }} 
+                username: ${{ secrets.REMOTE_USER }}
+                privateKey: ${{ secrets.SERVER_SSH_KEY }} 
 
