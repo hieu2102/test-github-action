@@ -37,7 +37,7 @@ jobs:
       - name: Install Dependencies
         uses: garygrossgarten/github-action-ssh@v0.6.3
         with:
-                command: "nohup sh ${{ secrets.TARGET }}/start.sh &"
+                command: "sudo systemctl restart isd"
                 host: ${{ secrets.REMOTE_HOST }} 
                 username: ${{ secrets.REMOTE_USER }}
                 privateKey: ${{ secrets.SERVER_SSH_KEY }} 

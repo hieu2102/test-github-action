@@ -8,7 +8,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node app.js"
+    "test": "node app.js",
+	"stop": "`ps -ef |grep server.js|awk '{print \"kill -9 \"$2}'`"
   },
   "repository": {
     "type": "git",
